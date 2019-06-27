@@ -2,6 +2,7 @@ var canvas = document.getElementById("renderCanvas");
 
 var createScene = function () {
     var scene = new BABYLON.Scene(engine);
+    scene.debugLayer.show();
    // scene.debugLayer.show();
     var camera = new BABYLON.ArcRotateCamera('MainCamera1', 0, 0, 3, BABYLON.Vector3(0, 1.2, 0), scene, true);
     camera.position = new BABYLON.Vector3(0, 1.2, -1.1);
@@ -42,13 +43,27 @@ var createScene = function () {
     var Box_Right_Stick = BABYLON.MeshBuilder.CreateBox("Box_Right_Stick",{size:0.5},scene);
     Box_Right_Stick.position = new BABYLON.Vector3(1,0,1);
 
+
+    var plane = BABYLON.Mesh.CreatePlane("plane", 1);
+    plane.position = new BABYLON.Vector3(0, 1, 0)
+    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane);
+    var panel = new BABYLON.GUI.StackPanel();    
+    advancedTexture.addControl(panel);  
+    var header = new BABYLON.GUI.TextBlock();
+    header.text = "Color GUI";
+    header.height = "100px";
+    header.color = "white";
+    header.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+    header.fontSize = "120"
+    panel.addControl(header); 
+
     // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-    var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
+   // var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
 
     //for VR
     var vrHelper = scene.createDefaultVRExperience();
     vrHelper.enableTeleportation({floorMeshName: "ground"});
-
+    vrHelper.enableInteractions();
 
     const leftHand = BABYLON.Mesh.CreateBox("leftHand",0.1, scene);
     leftHand.scaling.z = 2;
@@ -178,6 +193,11 @@ var createScene = function () {
         });
         
     });
+
+    // Default Environment
+    var environment = scene.createDefaultEnvironment({ enableGroundShadow: false, groundYBias: 1 });
+    environment.setMainColor(BABYLON.Color3.FromHexString("#74b9ff"))
+    
 
 
 
