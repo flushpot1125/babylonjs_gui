@@ -19,31 +19,23 @@ var createScene = function () {
     var panel = new BABYLON.GUI.StackPanel();    
     advancedTexture.addControl(panel);  
     var header = new BABYLON.GUI.TextBlock();
-    header.text = "Color GUI";
+    header.text = "GUIのテスト中";
     header.height = "100px";
-    header.color = "white";
+    header.color = "black";
     header.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
     header.fontSize = "120"
     panel.addControl(header); 
 
-    // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-   // var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
-
    var museumMesh;
-   BABYLON.SceneLoader.ImportMeshAsync("", "../model/", "museum_v7.glb", scene).then(function(result) {
+   BABYLON.SceneLoader.ImportMeshAsync("", "../model/", "museum.glb", scene).then(function(result) {
      //  result.meshes[1].scaling= new BABYLON.Vector3(0.15, 0.15, 0.15);
     // museumMesh = result.meshes[0];
     
      //  museumMesh = result.meshes[0].scaling = new BABYLON.Vector3(2,2,2);
 
    });
-   var floorName ="floor";
-   var floorStairName ="floor_stair";
 
-
-    //for VR
     var vrHelper = scene.createDefaultVRExperience();
- //   vrHelper.enableTeleportation({floorMeshName: "ground"});
     vrHelper.enableTeleportation({
        floorMeshName: "floor_primitive1"
     });
@@ -58,7 +50,8 @@ var createScene = function () {
     rightHand.isVisible =false;
 
 
-
+    //no need for teleport
+/*
     vrHelper.onControllerMeshLoaded.add((webVRController)=>{
         //left:Y, right:B
         webVRController.onSecondaryButtonStateChangedObservable.add((stateObject)=>{
@@ -143,6 +136,7 @@ var createScene = function () {
         });
         
     });
+    */
 
     // Default Environment
     var environment = scene.createDefaultEnvironment({ enableGroundShadow: false, groundYBias: 1 });
