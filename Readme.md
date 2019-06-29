@@ -39,7 +39,11 @@ http://localhost:8001
 
 ## How to teleport
 
-Hold up on joystick of quest controller. Then teleport circle is showed. Release the joystick, you can teleport.
+Hold up on joystick of quest controller. Then teleport circle is showed. Release the joystick, you can teleport.  
+
+Registered mesh by enabledTeleportation is the two red square.  
+
+![teleport position](./picture_readme/teleport_position.jpg)
 
 See : https://doc.babylonjs.com/how_to/webvr_helper
 
