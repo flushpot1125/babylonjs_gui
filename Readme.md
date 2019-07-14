@@ -10,13 +10,15 @@ Basic functions are added to the repo for BJS and VR beginner like me.
 
 * enable teleport  
 
+* Grab objects  
+
 * GUI text  (TBA)  
 
 * Scroll  (TBA)
 
 * Scene change (TBA)  
 
-* Grab objects (TBA)  
+
 
 ---
 
@@ -37,7 +39,13 @@ Access the URL
 http://localhost:8001
 ```
 
-## How to teleport
+## Import mesh, and teleport
+
+Activate "TeleportCheck.js" in index.html.
+
+```html
+<script src="./js/TeleportCheck.js"></script>
+```
 
 Hold up on joystick of quest controller. Then teleport circle is showed. Release the joystick, you can teleport.  
 
@@ -46,6 +54,22 @@ Registered mesh by enabledTeleportation is the two red square.
 ![teleport position](./picture_readme/teleport_position.jpg)
 
 See : https://doc.babylonjs.com/how_to/webvr_helper
+
+## Grab objects
+
+Activate "GrabObjectsCheck.js" in index.html.
+
+```html
+<script src="./js/GrabObjectsCheck.js"></script>
+```
+
+Pressing main trigger of left quest controller when ray from the controller hits cube objects.  
+
+![Grab object](./picture_readme/grab_object.jpg)
+
+The code is based on the playground sample. Thanks for great code!
+
+https://www.babylonjs-playground.com/#5P51YL#5
 
 ---
 
