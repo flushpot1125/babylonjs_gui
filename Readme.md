@@ -67,6 +67,10 @@ Pressing main trigger of left quest controller when ray from the controller hits
 
 ![Grab object](./picture_readme/grab_object.jpg)
 
+See the movie.  
+
+[![](https://img.youtube.com/vi/iop5lj0CoKc/0.jpg)](https://youtu.be/iop5lj0CoKc)  
+
 The code is based on the playground sample. Thanks for great code!
 
 https://www.babylonjs-playground.com/#5P51YL#5
