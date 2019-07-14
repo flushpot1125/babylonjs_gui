@@ -19,7 +19,7 @@ var createScene = function () {
     var panel = new BABYLON.GUI.StackPanel();    
     advancedTexture.addControl(panel);  
     var header = new BABYLON.GUI.TextBlock();
-    header.text = "GUIのテスト中";
+  //  header.text = "GUIのテスト中";
     header.height = "100px";
     header.color = "black";
     header.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
@@ -27,7 +27,7 @@ var createScene = function () {
     panel.addControl(header); 
 
    var museumMesh;
-   BABYLON.SceneLoader.ImportMeshAsync("", "../model/", "museum.glb", scene).then(function(result) {
+   BABYLON.SceneLoader.ImportMeshAsync("", "../model/", "blocksSample.glb", scene).then(function(result) {
      //  result.meshes[1].scaling= new BABYLON.Vector3(0.15, 0.15, 0.15);
     // museumMesh = result.meshes[0];
     
