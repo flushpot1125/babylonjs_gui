@@ -21,7 +21,6 @@ var createScene = function () {
 
     VRHelper.onControllerMeshLoaded.add((webVRController)=>{
         webVRController.onTriggerStateChangedObservable.add((stateObject)=>{
-            if(webVRController.hand ==='left'){
                 //grab
                 if(stateObject.value > 0.01){
                     if(selectedMesh !=null){
@@ -34,7 +33,6 @@ var createScene = function () {
                         webVRController.mesh.removeChild(selectedMesh);
                     }
                 }
-            }
         });
     });
 
